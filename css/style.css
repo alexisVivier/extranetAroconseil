@@ -1,0 +1,22 @@
+form {
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+	width: 20vw;
+	margin: 5vw auto;
+}
+
+form div {
+	display: flex;
+	justify-content: space-between;
+	padding: 1vw 0;
+}
+
+form div input[type=text] {
+	width: 40%;
+}
+
+form div input[type=submit] {
+	width: 40%;
+	margin: auto;
+}
