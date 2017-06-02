@@ -1,3 +1,9 @@
+<?php
+
+include 'connexionBdd.php';
+
+?>
+
 <!DOCTYPE html>
 <html class=''>
 
@@ -12,21 +18,28 @@
         <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Rechercher une société" title="Type in a name">
         <div id="table" class="table-editable">
             <table class="table">
-                <tr>
-                    <th onclick="sortTable(0)">Société</th>
-                    <th onclick="sortTable(1)">Année</th>
-                    <th onclick="sortTable(2)">Date</th>
-                    <th>Demande</th>
-                    <th onclick="sortTable(3)">Nombre d'heure</th>
-                </tr>
-                <tr>
-                    <td contenteditable="true">Aro Conseil</td>
-                    <td contenteditable="true">2017</td>
-                    <td contenteditable="true">Mardi 2 Juin</td>
-                    <td contenteditable="true">Lorem ipsum</td>
-                    <td contenteditable="true">8</td>
-                    <td> <span class="table-remove glyphicon glyphicon-remove"></span> </td>
-                </tr>
+					<tr>
+                    	<th onclick='sortTable(0)'>Société</th>
+                    	<th onclick='sortTable(1)'>Année</th>
+                    	<th onclick='sortTable(2)'>Date</th>
+                    	<th>Demande</th>
+                    	<th onclick='sortTable(3)'>Nombre heures</th>
+                	</tr>
+                <?php
+                $test_maintenance_select_all = "SELECT * FROM maintenance";
+                $result_maintenance_select_all = mysql_query($test_maintenance_select_all);
+                while($data_maintenance_select_all=mysql_fetch_array($result_maintenance_select_all)){
+                    print_r("
+                        <tr>
+                            <td contenteditable='true'>".$data_maintenance_select_all['society_maintenance']."</td>
+                            <td contenteditable='true'>".$data_maintenance_select_all['annee_maintenance']."</td>
+                            <td contenteditable='true'>".$data_maintenance_select_all['date_maintenance']."</td>
+                            <td contenteditable='true'>".$data_maintenance_select_all['demande_maintenance']."</td>
+                            <td contenteditable='true'>".$data_maintenance_select_all['nbr_heure_maintenance']."</td>
+                            <td> <span class='table-remove glyphicon glyphicon-remove'></span> </td>
+                        </tr>");
+                }
+                ?>
                 <!-- Adding new row line -->
                 <tr class="hide">
                     <td contenteditable="true">Untitled</td>
