@@ -1,22 +1,90 @@
-form {
-	display: flex;
-	justify-content: space-around;
-	flex-direction: column;
-	width: 20vw;
-	margin: 5vw auto;
+body {
+	margin: 0;
 }
 
-form div {
+* {
+	box-sizing: border-box;
+}
+
+a {
+	background-color: transparent;
+	color: #12acf0;
+	text-decoration: none;
+}
+
+a:hover,
+a:active {
+	outline: 0;
+}
+
+/* ALEXIS */
+
+/* HEADER */
+
+header {
+	display: flex;
+	align-items: center;
+	background-color: aqua;
+	height: 50px;
+}
+
+header svg {
+	width: 32px;
+	height: 32px;
+}
+
+/* FIN HEADER */
+
+/* PAGE DE CONNEXION */
+
+#index {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#index section {
+	display: flex;
+	flex-direction: column;
+	padding: 1% 2%;
+	border: 2px solid black;
+	margin-top: 15vw;
+	width: 25%;
+}
+
+#index form {
+	display: flex;
+	flex-direction: column;
+}
+
+#index form input[type=submit] {
+	width: 40%;
+	color: aqua;
+}
+
+#index form div{
 	display: flex;
 	justify-content: space-between;
-	padding: 1vw 0;
 }
 
-form div input[type=text] {
-	width: 40%;
+#index form div:nth-child(2) {
+	padding: 4% 0;
 }
 
-form div input[type=submit] {
-	width: 40%;
-	margin: auto;
+/* FIN PAGE DE CONNEXION */
+
+/* PAGE DE D'AJOUT, SUPPRESION, MODIF UTILISATEUR */
+
+#modifsUser {
+	display: flex;
+	justify-content: space-around;
 }
+
+#modifsUser #addUserForm {
+	display: flex;
+	flex-direction: column;
+}
+
+/* FIN PAGE DE D'AJOUT, SUPPRESION, MODIF UTILISATEUR */
+
+/* FIN ALEXIS */
