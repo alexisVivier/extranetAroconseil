@@ -8,6 +8,15 @@ include("connexionBdd.php");
 
 session_start();
 
+// On teste pour vérifier si la personne connectée est bien admin, sinon on la renvoie a la page de connexion
+
+if ($_SESSION["admin"] === 0){
+	header('Location: index.php');
+}
+else if ($_SESSION["login"] !== true){
+	header('Location: index.php');
+}
+
 //	On récupère tout ce qui à été entré dans le formulaire pour traiter les données par la suite
 
 if(isset($_POST['addUserButton'])){
