@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700');
 
 body {
 	margin: 0;
@@ -37,61 +37,81 @@ header svg {
 
 /* FIN HEADER */
 
-/* PAGE DE CONNEXION */
+/* HEADER DE LA PAGE DE CONNEXION */
 
-#index {
-	display: flex;
-	justify-content: center;
+#headerIndex {
+	border-bottom-color: black;
+	border-bottom-width: 3px;
+	border-bottom-style: solid;
+	width: 95%;
+	margin: auto;
 }
+
+#headerIndex svg {
+	width: 125px;
+	margin: 1.5%;
+}
+
+/* FIN HEADER DE LA PAGE DE CONNEXION */
+
+/* PAGE DE CONNEXION */
 
 #index section {
 	display: flex;
 	flex-direction: column;
-	padding: 1% 2%;
-	margin-top: 5vw;
-	width: 25%;
-}
-
-#index section #messageConnexion {
-	margin: 5% 0;
-}
-
-#index section #messageConnexion h2 {
-	margin: 2% 0;
 	text-align: center;
-	padding: 1% 0;
+	width: 50%;
+	margin: auto;
+/*	border: 2px solid black;*/
+	padding: 6% 0 0 0;
 }
 
-#index section #messageConnexion p {
-	text-align: center;
-	color: deepskyblue;
+#index section svg:first-child {
+	width: 80px;
+	margin: 2%;
+	margin-top: -6%;
 }
 
-#index section > h2:nth-child(2){
-	margin-bottom: 4%;
+#index section #messageConnexion div {
 }
 
-#index form {
+#index section #messageConnexion #firstP{
+	font-weight: bold;
+	font-size: 28px;
+	margin-bottom: -1%;
+} 
+
+#index section #messageConnexion #secondP, #index section #messageConnexion #errorP{
+	font-weight: 300;
+	font-size: 22px;
+	margin-bottom: 6%;
+}
+
+#index section form {
 	display: flex;
 	flex-direction: column;
-	border-radius: 2px;
-	box-shadow: 0px 0px 20px 3px deepskyblue;
-	padding: 4%;
+	width: 50%;
+	margin: auto;
 }
 
-#index form input[type=submit] {
-	width: 40%;
-	align-self: center;
+#index section form input {
+	margin: auto;
+	width: 100%;
+	padding: 2%;
 }
 
-#index form div{
-	display: flex;
-	justify-content: space-between;
+#index section form input:nth-child(2){
+	margin: 7% 0 0 0;
 }
 
-#index form div:nth-child(2) {
-	padding: 4% 0;
+#index section form input[type=submit] {
+	border: none;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
 }
+
+
 
 /* FIN PAGE DE CONNEXION */
 
