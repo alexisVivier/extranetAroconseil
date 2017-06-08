@@ -198,7 +198,8 @@ header svg {
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     display: block;
-    padding: 2.5vh 0 2.5vh 8vh;
+    padding: 1.5vh 0 1.5vh 8vh;
+    margin-bottom: 1vh;
 }
 
 .sidebar-children-center {
@@ -271,8 +272,8 @@ li.active.sidebar-children a svg {
 }
 
 #sidebar-logout-svg {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     margin-left: 6vh;
 }
 
@@ -288,6 +289,28 @@ li.active.sidebar-children a svg {
 
 .sidebar-parent-hover a:hover svg {
     fill: black;
+}
+
+.sidebar-children-center {
+    padding-top: 1.5vh;
+    padding-left: 10vh;
+}
+
+ul.sidebar-children-center a {
+    display: none; 
+}
+
+.sidebar-children-center li a{
+    padding: 0;
+    margin: 0;
+    color: white;
+    background-color: transparent;
+    display: block;
+}
+
+.sidebar-children-center li a:hover {
+    color: #999999;
+    background-color: transparent;
 }
 
 /* FIN NATHAN */
