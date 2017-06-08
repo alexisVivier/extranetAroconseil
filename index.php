@@ -74,6 +74,7 @@ if(isset($_POST['connexion'])){
 		C12.327,12.018,11.4,12.84,10.305,13.365z M13.502,10h-1.758c0.134-0.632,0.219-1.303,0.246-2h1.99
 		C13.928,8.704,13.762,9.377,13.502,10z M11.99,7c-0.027-0.697-0.112-1.368-0.246-2h1.758c0.26,0.623,0.426,1.296,0.479,2H11.99z" /> </g>
 				</svg>
+<<<<<<< HEAD
 				<p>Bienvenue sur l'extranet d'AroConseil.</p>
 				<p>Pour continuer, merci de vous identifier.</p>
 				<p>
@@ -85,6 +86,22 @@ if(isset($_POST['connexion'])){
 					<input type="email" name="emailUser" placeholder="Email">
 					<input type="password" name="passwordUser" placeholder="Mot de passe"> </div>
 				<input type="submit" value="Connexion" name="connexion"> </form>
+=======
+				<div>
+					<p id="firstP">Bienvenue sur l'extranet d'AroConseil.</p>
+					<p id="secondP">Pour continuer, merci de vous identifier.</p>
+					<p id="errorP">
+						<?php echo $erreur ?>
+					</p>
+				</div>
+			</div>
+			<form action="index.php" method="post">
+				<div id="champsConnexion">
+					<input type="email" name="emailUser" placeholder="Email">
+					<input type="password" name="passwordUser" placeholder="Mot de passe"> </div>
+				<input type="submit" value="Connexion" name="connexion">
+				</form>
+>>>>>>> f6e6da6de579f623c7c84d97df8aba5c888d3d7e
 		</section>
 	</div>
 	<?php 

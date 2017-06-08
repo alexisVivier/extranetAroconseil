@@ -6,7 +6,11 @@ $test_maintenance_count_all = "SELECT count(*) AS nbrLignes FROM maintenance";
 $result_maintenance_count_all = mysql_query($test_maintenance_count_all);
 while($data_maintenance_count_all = mysql_fetch_array($result_maintenance_count_all)){
 	$total_maintenance = $data_maintenance_count_all['nbrLignes'];
+<<<<<<< HEAD
 	// echo $total_maintenance;
+=======
+	 
+>>>>>>> f6e6da6de579f623c7c84d97df8aba5c888d3d7e
 }
 if(isset($_POST['modifierMaintenance'])){
     for($i=1; $i<=$total_maintenance; $i++){
@@ -39,6 +43,7 @@ if(isset($_POST['modifierMaintenance'])){
 }
 
 if(isset($_POST['validationAjoutLigne'])){
+<<<<<<< HEAD
 	echo "caca";
 	$add_new_annee = $_POST['new_curr_annee'.$j];
 	echo $add_new_annee;
@@ -48,7 +53,26 @@ if(isset($_POST['validationAjoutLigne'])){
 	$add_new_society = $_POST['new_curr_society'.$j];
 	$test_add_maintenance = "INSERT INTO user (annee_maintenance, date_maintenance, demande_maintenance, nbr_heure_maintenance, society_maintenance) VALUES ('$add_new_annee', '$firstname', '$email', '$admin', '$password', '$society')";
 	$result_add_maintenance = mysql_query($test_add_maintenance);
+=======
+	for($k=1; $k<=$j; $k++){
+		$add_new_annee = $_POST['new_curr_annee'.$j];
+		$add_new_date = $_POST['new_curr_date'.$j];
+		$add_new_demande = $_POST['new_curr_demande'.$j];
+		$add_new_nbr_heure = $_POST['new_curr_nbr_heure'.$j];
+		$add_new_society = $_POST['new_curr_society'.$j];
+		$test_add_maintenance = "INSERT INTO user (annee_maintenance, date_maintenance, demande_maintenance, nbr_heure_maintenance, society_maintenance) VALUES ('$add_new_annee', '$firstname', '$email', '$admin', '$password', '$society')";
+		$result_add_maintenance = mysql_query($test_add_maintenance);
+	}
+>>>>>>> f6e6da6de579f623c7c84d97df8aba5c888d3d7e
 }
+
+//Supprimer une ligne du tableau
+
+$ligneAsupprimer = $_GET["demandeAsuppr"];
+echo $ligneAsupprimer;
+$test_ligne_to_delete = "DELETE FROM maintenance WHERE 	id_maintenance = '$ligneAsupprimer'";
+$result_ligne_to_delete = mysql_query($test_ligne_to_delete);
+
 ?>
 	<!DOCTYPE html>
 	<html class=''>
@@ -84,6 +108,17 @@ if(isset($_POST['validationAjoutLigne'])){
 								}
 							}
 						</script>
+<<<<<<< HEAD
+=======
+						<script type="text/javascript">
+							
+							function goto_confirm(url) {
+								if(confirm("Etes-vous sur de vouloir supprimer cette ligne ?"))document.location.href=url;
+								return false; //pour ne pas revenir au début de la page
+							}
+							
+						</script>
+>>>>>>> f6e6da6de579f623c7c84d97df8aba5c888d3d7e
 						<?php
                         $i=1;
                 $test_maintenance_select_all = "SELECT * FROM maintenance";
@@ -91,6 +126,7 @@ if(isset($_POST['validationAjoutLigne'])){
                 while($data_maintenance_select_all=mysql_fetch_array($result_maintenance_select_all)){
                     ?>
 							<tr>
+<<<<<<< HEAD
 								<td contenteditable='true'>
 									<input type='text' id='new_society<?=$i?>' name='new_society<?=$i?>' value="<?php echo $data_maintenance_select_all['society_maintenance']?>" onchange="updateData();">
 									<input type="hidden" value="" id="new_curr_society<?= $i?>" name="new_curr_society<?= $i?>"> </td>
@@ -107,17 +143,42 @@ if(isset($_POST['validationAjoutLigne'])){
 									<input type='text' id='new_nbr_heure<?=$i?>' name='new_nbr_heure<?=$i?>' value="<?php echo $data_maintenance_select_all['nbr_heure_maintenance']?>" onchange="updateData();">
 									<input type="hidden" id="new_curr_nbr_heure<?= $i?>" name="new_curr_nbr_heure<?= $i?>"> </td>
 								<td> <span class='table-remove glyphicon glyphicon-remove'></span > </td>
+=======
+								<td contenteditable='false'>
+									<input type='text' id='society<?=$i?>' name='society<?=$i?>' value="<?php echo $data_maintenance_select_all['society_maintenance']?>" onchange="updateData();">
+									<input type="hidden" value="" id="curr_society<?= $i?>" name="curr_society<?= $i?>">
+									<input type="hidden" value="<?php echo $data_maintenance_select_all['id_maintenance']?>" id="id_maintenance<?= $i?>" name="id_maintenance<?= $i?>"> </td>
+								<td contenteditable='false'>
+									<input type='number' id='annee<?=$i?>' name='annee<?=$i?>' value="<?php echo $data_maintenance_select_all['annee_maintenance']?>" onchange="updateData();">
+									<input type="hidden" id="curr_annee<?= $i?>" name="curr_annee<?= $i?>" value=""> </td>
+								<td contenteditable='false'>
+									<input type='date' id='date<?=$i?>' name='date<?=$i?>' value="<?php echo $data_maintenance_select_all['date_maintenance']?>" onchange="updateData();">
+									<input type="hidden" id="curr_date<?= $i?>" name="curr_date<?= $i?>" value=""> </td>
+								<td contenteditable='false'>
+									<input type='text' id='demande<?=$i?>' name='demande<?=$i?>' value="<?php echo $data_maintenance_select_all['demande_maintenance']?>" onchange="updateData();">
+									<input type="hidden" id="curr_demande<?= $i?>" name="curr_demande<?= $i?>" value=""> </td>
+								<td contenteditable='false'>
+									<input type='number' id='nbr_heure<?=$i?>' name='nbr_heure<?=$i?>' value="<?php echo $data_maintenance_select_all['nbr_heure_maintenance']?>" onchange="updateData();">
+									<input type="hidden" id="curr_nbr_heure<?= $i?>" name="curr_nbr_heure<?= $i?>"> </td>
+								<td> <a style="text-decoration: none;" href="#" onclick="return goto_confirm('maintenance.php?demandeAsuppr=<?php echo $data_maintenance_select_all['id_maintenance'] ?>')"><span class='table-remove glyphicon glyphicon-remove'></span ></a> </td>
+>>>>>>> f6e6da6de579f623c7c84d97df8aba5c888d3d7e
 							</tr>
 							<?php
                             $i++;
                 }
                 ?>
 								<input type="submit" value="Modifier" name="modifierMaintenance"> 
+<<<<<<< HEAD
                         <?php
 						$j=1;
 						?>
+=======
+                        
+>>>>>>> f6e6da6de579f623c7c84d97df8aba5c888d3d7e
 					<!-- Adding new row line -->
+						
 					<tr class="hide">
+<<<<<<< HEAD
 						<td contenteditable="true"><input type='text' id='society<?=$j?>' name='society<?=$j?>' value="<?php echo $data_maintenance_select_all['society_maintenance']?>" onchange="updateData();">
 									<input type="hidden" value="" id="curr_society<?= $j?>" name="curr_society<?= $j?>"></td>
 						<td contenteditable="true"><input type='text' id='annee<?=$j?>' name='annee<?=$j?>' value="<?php echo $data_maintenance_select_all['annee_maintenance']?>" onchange="updateData();">
@@ -135,10 +196,29 @@ if(isset($_POST['validationAjoutLigne'])){
 						?>
 					</table>
 					<input type="submit" value="valider" name="validationAjoutLigne">
+=======
+						<td contenteditable="false"><input type='text' id='new_society<?=$i?>' name='new_society<?=$i?>' value="" onchange="updateData();">
+									<input type="hidden" value="" id="new_curr_society<?= $i?>" name="new_curr_society<?= $i?>"></td>
+						<td contenteditable="false"><input type='number' id='annee<?=$i?>' name='annee<?=$i?>' value="<?php echo $data_maintenance_select_all['annee_maintenance']?>" onchange="updateData();">
+									<input type="hidden" id="curr_annee<?= $i?>" name="curr_annee<?= $i?>" value=""></td>
+						<td contenteditable="false"><input type='date' id='date<?=$i?>' name='date<?=$i?>' value="<?php echo $data_maintenance_select_all['date_maintenance']?>" onchange="updateData();">
+									<input type="hidden" id="curr_date<?= $i?>" name="curr_date<?= $i?>" value=""></td>
+						<td contenteditable="false"><input type='text' id='demande<?=$i?>' name='demande<?=$i?>' value="<?php echo $data_maintenance_select_all['demande_maintenance']?>" onchange="updateData();">
+									<input type="hidden" id="curr_demande<?= $i?>" name="curr_demande<?= $i?>" value=""></td>
+						<td contenteditable="false"><input type='number' id='nbr_heure<?=$i?>' name='nbr_heure<?=$i?>' value="<?php echo $data_maintenance_select_all['nbr_heure_maintenance']?>" onchange="updateData();">
+							<?php $j++;
+							echo $j;?>
+									<input type="hidden" id="curr_nbr_heure<?= $i?>" name="curr_nbr_heure<?= $i?>"></td>
+						<td> <span class="table-remove glyphicon glyphicon-remove"></span> </td>
+							</tr>
+					</table>
+>>>>>>> f6e6da6de579f623c7c84d97df8aba5c888d3d7e
 				</form>
 				<button class="table-add btn btn-primary" name="ajoutLigne">Add Row</button>
 			</div>
 		</div>
+		
+<!--
 		<script src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script>
 		<script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 		<script src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
@@ -160,6 +240,8 @@ if(isset($_POST['validationAjoutLigne'])){
 				}
 			});
 		</script>
+-->
+
 		<script>
 			function myFunction() {
 				var input, filter, table, tr, td, i;

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700');
 
 body {
 	margin: 0;
@@ -31,6 +31,7 @@ header svg {
 /* FIN HEADER */
 
 /* HEADER DE LA PAGE DE CONNEXION */
+<<<<<<< HEAD
 
 #headerIndex {
 	border-bottom-color: black;
@@ -66,6 +67,82 @@ header svg {
 #index section #messageConnexion p:first-child {
 	
 } 
+
+
+=======
+
+#headerIndex {
+	border-bottom-color: black;
+	border-bottom-width: 3px;
+	border-bottom-style: solid;
+	width: 95%;
+	margin: auto;
+}
+
+#headerIndex svg {
+	width: 125px;
+	margin: 1.5%;
+}
+
+/* FIN HEADER DE LA PAGE DE CONNEXION */
+
+/* PAGE DE CONNEXION */
+
+#index section {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	width: 50%;
+	margin: auto;
+/*	border: 2px solid black;*/
+	padding: 6% 0 0 0;
+}
+
+#index section svg:first-child {
+	width: 80px;
+	margin: 2%;
+	margin-top: -6%;
+}
+
+#index section #messageConnexion div {
+}
+
+#index section #messageConnexion #firstP{
+	font-weight: bold;
+	font-size: 28px;
+	margin-bottom: -1%;
+} 
+
+#index section #messageConnexion #secondP, #index section #messageConnexion #errorP{
+	font-weight: 300;
+	font-size: 22px;
+	margin-bottom: 6%;
+}
+
+#index section form {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	margin: auto;
+}
+
+#index section form input {
+	margin: auto;
+	width: 100%;
+	padding: 2%;
+}
+
+#index section form input:nth-child(2){
+	margin: 7% 0 0 0;
+}
+
+#index section form input[type=submit] {
+	border: none;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+>>>>>>> f6e6da6de579f623c7c84d97df8aba5c888d3d7e
 
 
 
