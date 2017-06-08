@@ -10,8 +10,6 @@ body {
 }
 
 a {
-	background-color: transparent;
-	color: #12acf0;
 	text-decoration: none;
 }
 
@@ -24,11 +22,6 @@ a:active {
 
 /* HEADER */
 
-header {
-	display: flex;
-	align-items: center;
-	padding: 1% 3%;
-}
 
 header svg {
 	width: 64px;
@@ -37,61 +30,44 @@ header svg {
 
 /* FIN HEADER */
 
-/* PAGE DE CONNEXION */
+/* HEADER DE LA PAGE DE CONNEXION */
 
-#index {
-	display: flex;
-	justify-content: center;
+#headerIndex {
+	border-bottom-color: black;
+	border-bottom-width: 3px;
+	border-bottom-style: solid;
+	width: 95%;
+	margin: auto;
 }
+
+#headerIndex svg {
+	width: 125px;
+	margin: 1.5%;
+}
+
+/* FIN HEADER DE LA PAGE DE CONNEXION */
+
+/* PAGE DE CONNEXION */
 
 #index section {
 	display: flex;
 	flex-direction: column;
-	padding: 1% 2%;
-	margin-top: 5vw;
-	width: 25%;
-}
-
-#index section #messageConnexion {
-	margin: 5% 0;
-}
-
-#index section #messageConnexion h2 {
-	margin: 2% 0;
 	text-align: center;
-	padding: 1% 0;
-}
-
-#index section #messageConnexion p {
-	text-align: center;
-	color: deepskyblue;
-}
-
-#index section > h2:nth-child(2){
-	margin-bottom: 4%;
-}
-
-#index form {
-	display: flex;
-	flex-direction: column;
-	border-radius: 2px;
-	box-shadow: 0px 0px 20px 3px deepskyblue;
-	padding: 4%;
-}
-
-#index form input[type=submit] {
 	width: 40%;
-	align-self: center;
+	margin: auto;
+	border: 2px solid black;
 }
 
-#index form div{
-	display: flex;
-	justify-content: space-between;
+#index section svg:first-child {
+	width: 100px;
+	margin: 2%;
 }
 
-#index form div:nth-child(2) {
-	padding: 4% 0;
-}
+#index section #messageConnexion p:first-child {
+	
+} 
+
+
 
 /* FIN PAGE DE CONNEXION */
 
@@ -111,6 +87,130 @@ header svg {
 
 /* FIN ALEXIS */
 
+
 /* NATHAN */
+
+#sidebar-container {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 22%;
+}
+
+#sidebar-logo {
+    fill: white;
+    height: 4.5%;
+    width: auto;
+    margin-top: 18%;
+}
+
+.sidebar-menu {
+    margin-top: 18%;
+    padding-left: 0;
+}
+
+.sidebar-menu li {
+    position: relative;
+}
+
+.sidebar-menu li a {
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    display: block;
+    padding: 2.5vh 0 2.5vh 8vh;
+}
+
+.sidebar-children-center {
+    padding-top: 2.5vh;
+}
+
+.sidebar-children-center li {
+    padding-bottom: 1vh;
+    padding-top: 1vh;
+    padding-left: 2vh;
+}
+
+.sidebar-children svg{
+    fill: white;
+    position: absolute;
+    margin-left: 2vh;
+    margin-top: -1vh;
+    width: 40px;
+    height: auto;
+}
+
+.sidebar-children a svg {
+  transition: all .5s;
+}
+
+li.active.sidebar-children a svg {
+	-moz-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+.sidebar-menu .sidebar-children > ul {
+    display: none;
+}
+
+#sidebar-block-profile {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: 22%;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    left: 0;
+    padding-bottom: 5vh;
+}
+
+#sidebar-profile-svg-user {
+    width: 62px;
+    height: 62px;
+    margin-right: 2vh;
+}
+
+#sidebar-profile-text {
+    color: white;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: 1vh;
+}
+
+#sidebar-user-text {
+    color: white;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    margin: 0;
+}
+
+#sidebar-logout-svg {
+    width: 40px;
+    height: 40px;
+    margin-left: 6vh;
+}
+
+.sidebar-parent-hover a {
+    color: white;
+    transition-duration: 0.7s;
+}
+
+.sidebar-parent-hover a:hover {
+    background-color: white;
+    color: black;
+}
+
+.sidebar-parent-hover a:hover svg {
+    fill: black;
+}
 
 /* FIN NATHAN */

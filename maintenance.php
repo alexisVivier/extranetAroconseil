@@ -6,13 +6,48 @@ $test_maintenance_count_all = "SELECT count(*) AS nbrLignes FROM maintenance";
 $result_maintenance_count_all = mysql_query($test_maintenance_count_all);
 while($data_maintenance_count_all = mysql_fetch_array($result_maintenance_count_all)){
 	$total_maintenance = $data_maintenance_count_all['nbrLignes'];
-	echo $total_maintenance;
+	// echo $total_maintenance;
+}
+if(isset($_POST['modifierMaintenance'])){
+    for($i=1; $i<=$total_maintenance; $i++){
+    	if((isset($_POST['curr_society'.$i])) AND ($_POST['curr_society'.$i] !="")){
+			$new_valeur_society = $_POST['curr_society'.$i];
+    		$test_update_maintenance_society = "UPDATE maintenance SET society_maintenance = '$new_valeur_society' WHERE id_maintenance = '$i'";
+            $result_update_maintenance_society = mysql_query($test_update_maintenance_society);
+    	}
+		if((isset($_POST['curr_annee'.$i])) AND ($_POST['curr_annee'.$i] !="")){
+			$new_valeur_annee = $_POST['curr_annee'.$i];
+    		$test_update_maintenance_annee = "UPDATE maintenance SET annee_maintenance = '$new_valeur_annee' WHERE id_maintenance = '$i'";
+            $result_update_maintenance_annee = mysql_query($test_update_maintenance_annee);
+		}
+		if((isset($_POST['curr_date'.$i])) AND ($_POST['curr_date'.$i] !="")){
+			$new_valeur_date = $_POST['curr_date'.$i];
+    		$test_update_maintenance_date = "UPDATE maintenance SET date_maintenance = '$new_valeur_date' WHERE id_maintenance = '$i'";
+            $result_update_maintenance_date = mysql_query($test_update_maintenance_date);
+		}
+		if((isset($_POST['curr_demande'.$i])) AND ($_POST['curr_demande'.$i] !="")){
+			$new_valeur_demande = $_POST['curr_demande'.$i];
+    		$test_update_maintenance_demande = "UPDATE maintenance SET demande_maintenance = '$new_valeur_demande' WHERE id_maintenance = '$i'";
+            $result_update_maintenance_demande = mysql_query($test_update_maintenance_demande);
+		}
+		if((isset($_POST['curr_nbr_heure'.$i])) AND ($_POST['curr_nbr_heure'.$i] !="")){
+			$new_valeur_nbr_heure = $_POST['curr_nbr_heure'.$i];
+    		$test_update_maintenance_nbr_heure = "UPDATE maintenance SET nbr_heure_maintenance = '$new_valeur_nbr_heure' WHERE id_maintenance = '$i'";
+            $result_update_maintenance_nbr_heure = mysql_query($test_update_maintenance_nbr_heure);
+		}
+    }
 }
 
-for($i=1; $i<=$total_maintenance; $i++){
-//	if((isset($_POST['curr_society'.$i])) AND ($_POST['curr_society'.$i] !="") AND ($_POST['curr_society'.$i.''] !=$curr_society[$i])){
-//		echo "test2";
-//	}
+if(isset($_POST['validationAjoutLigne'])){
+	echo "caca";
+	$add_new_annee = $_POST['new_curr_annee'.$j];
+	echo $add_new_annee;
+	$add_new_date = $_POST['new_curr_date'.$j];
+	$add_new_demande = $_POST['new_curr_demande'.$j];
+	$add_new_nbr_heure = $_POST['new_curr_nbr_heure'.$j];
+	$add_new_society = $_POST['new_curr_society'.$j];
+	$test_add_maintenance = "INSERT INTO user (annee_maintenance, date_maintenance, demande_maintenance, nbr_heure_maintenance, society_maintenance) VALUES ('$add_new_annee', '$firstname', '$email', '$admin', '$password', '$society')";
+	$result_add_maintenance = mysql_query($test_add_maintenance);
 }
 ?>
 	<!DOCTYPE html>
@@ -28,52 +63,80 @@ for($i=1; $i<=$total_maintenance; $i++){
 		<div class="container">
 			<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Rechercher une société" title="Type in a name">
 			<div id="table" class="table-editable">
-				<table class="table">
-					<tr>
-						<th onclick='sortTable(0)'>Société</th>
-						<th onclick='sortTable(1)'>Année</th>
-						<th onclick='sortTable(2)'>Date</th>
-						<th>Demande</th>
-						<th onclick='sortTable(3)'>Nombre heures</th>
-					</tr>
-					<form action='maintenance.php' action='POST'>
+				<form action='maintenance.php' method='POST' name="maintenanceForm">
+					<table class="table">
+						<tr>
+							<th onclick='sortTable(0)'>Société</th>
+							<th onclick='sortTable(1)'>Année</th>
+							<th onclick='sortTable(2)'>Date</th>
+							<th>Demande</th>
+							<th onclick='sortTable(3)'>Nombre heures</th>
+						</tr>
+						<script type="text/javascript">
+							function updateData() {
+								var total_maintenance = '<?php echo $total_maintenance; ?>';
+								for (i = 1; i <= total_maintenance; i++) {
+									document.getElementById("curr_society" + i).value = document.getElementById("society" + i).value;
+									document.getElementById("curr_annee" + i).value = document.getElementById("annee" + i).value;
+									document.getElementById("curr_date" + i).value = document.getElementById("date" + i).value;
+									document.getElementById("curr_demande" + i).value = document.getElementById("demande" + i).value;
+									document.getElementById("curr_nbr_heure" + i).value = document.getElementById("nbr_heure" + i).value;
+								}
+							}
+						</script>
 						<?php
+                        $i=1;
                 $test_maintenance_select_all = "SELECT * FROM maintenance";
                 $result_maintenance_select_all = mysql_query($test_maintenance_select_all);
-                while($data_maintenance_select_all=mysql_fetch_array($result_maintenance_select_all)){?>
+                while($data_maintenance_select_all=mysql_fetch_array($result_maintenance_select_all)){
+                    ?>
 							<tr>
 								<td contenteditable='true'>
-									<input type='text' id='society<?=$i?>' name='society<?=$i?>' value="<?php echo $data_maintenance_select_all['society_maintenance']?>" autotcomplete="off" onchange="updateData()">
-									<input type="hidden" id="curr_society<?php $i?>" name="curr_society<?php $i?>" autotcomplete="off" value="" > </td>
+									<input type='text' id='new_society<?=$i?>' name='new_society<?=$i?>' value="<?php echo $data_maintenance_select_all['society_maintenance']?>" onchange="updateData();">
+									<input type="hidden" value="" id="new_curr_society<?= $i?>" name="new_curr_society<?= $i?>"> </td>
 								<td contenteditable='true'>
-									<input type='text' id='annee<?=$i?>' name='annee<?=$i?>' value="<?php echo $data_maintenance_select_all['annee_maintenance']?>" autotcomplete="off" onchange="updateData()">
-									<input type="hidden" id="curr_annee<?php $i?>" name="curr_annee<?php $i?>" autotcomplete="off" value="" > </td>
+									<input type='text' id='new_annee<?=$i?>' name='new_annee<?=$i?>' value="<?php echo $data_maintenance_select_all['annee_maintenance']?>" onchange="updateData();">
+									<input type="hidden" id="new_curr_annee<?= $i?>" name="new_curr_annee<?= $i?>" value=""> </td>
 								<td contenteditable='true'>
-									<input type='text' id='date<?=$i?>' name='date<?=$i?>' value="<?php echo $data_maintenance_select_all['date_maintenance']?>" autotcomplete="off" onchange="updateData()">
-									<input type="hidden" id="curr_date<?php $i?>" name="curr_date<?php $i?>" autotcomplete="off" value="" > </td>
+									<input type='text' id='new_date<?=$i?>' name='new_date<?=$i?>' value="<?php echo $data_maintenance_select_all['date_maintenance']?>" onchange="updateData();">
+									<input type="hidden" id="new_curr_date<?= $i?>" name="new_curr_date<?= $i?>" value=""> </td>
 								<td contenteditable='true'>
-									<input type='text' id='demande<?=$i?>' name='demande<?=$i?>' value="<?php echo $data_maintenance_select_all['demande_maintenance']?>" autotcomplete="off" onchange="updateData()">
-									<input type="hidden" id="curr_demande<?php $i?>" name="curr_demande<?php $i?>" autotcomplete="off" value="" > </td>
+									<input type='text' id='new_demande<?=$i?>' name='new_demande<?=$i?>' value="<?php echo $data_maintenance_select_all['demande_maintenance']?>" onchange="updateData();">
+									<input type="hidden" id="new_curr_demande<?= $i?>" name="new_curr_demande<?= $i?>" value=""> </td>
 								<td contenteditable='true'>
-									<input type='text' id='nbr_heure<?=$i?>' name='nbr_heure<?=$i?>' value="<?php echo $data_maintenance_select_all['nbr_heure_maintenance']?>" autotcomplete="off" onchange="updateData()">
-									<input type="hidden" id="curr_nbr_heure<?php $i?>" name="curr_nbr_heure<?php $i?>" autotcomplete="off"> </td>
+									<input type='text' id='new_nbr_heure<?=$i?>' name='new_nbr_heure<?=$i?>' value="<?php echo $data_maintenance_select_all['nbr_heure_maintenance']?>" onchange="updateData();">
+									<input type="hidden" id="new_curr_nbr_heure<?= $i?>" name="new_curr_nbr_heure<?= $i?>"> </td>
 								<td> <span class='table-remove glyphicon glyphicon-remove'></span > </td>
 							</tr>
 							<?php
+                            $i++;
                 }
                 ?>
-								<input type="submit" value="Modifier"> </form>
+								<input type="submit" value="Modifier" name="modifierMaintenance"> 
+                        <?php
+						$j=1;
+						?>
 					<!-- Adding new row line -->
 					<tr class="hide">
-						<td contenteditable="true">Untitled</td>
-						<td contenteditable="true">undefined</td>
-						<td contenteditable="true">undefined</td>
-						<td contenteditable="true">undefined</td>
-						<td contenteditable="true">undefined</td>
+						<td contenteditable="true"><input type='text' id='society<?=$j?>' name='society<?=$j?>' value="<?php echo $data_maintenance_select_all['society_maintenance']?>" onchange="updateData();">
+									<input type="hidden" value="" id="curr_society<?= $j?>" name="curr_society<?= $j?>"></td>
+						<td contenteditable="true"><input type='text' id='annee<?=$j?>' name='annee<?=$j?>' value="<?php echo $data_maintenance_select_all['annee_maintenance']?>" onchange="updateData();">
+									<input type="hidden" id="curr_annee<?= $j?>" name="curr_annee<?= $j?>" value=""></td>
+						<td contenteditable="true"><input type='text' id='date<?=$j?>' name='date<?=$j?>' value="<?php echo $data_maintenance_select_all['date_maintenance']?>" onchange="updateData();">
+									<input type="hidden" id="curr_date<?= $j?>" name="curr_date<?= $j?>" value=""></td>
+						<td contenteditable="true"><input type='text' id='demande<?=$j?>' name='demande<?=$j?>' value="<?php echo $data_maintenance_select_all['demande_maintenance']?>" onchange="updateData();">
+									<input type="hidden" id="curr_demande<?= $j?>" name="curr_demande<?= $j?>" value=""></td>
+						<td contenteditable="true"><input type='text' id='nbr_heure<?=$j?>' name='nbr_heure<?=$j?>' value="<?php echo $data_maintenance_select_all['nbr_heure_maintenance']?>" onchange="updateData();">
+									<input type="hidden" id="curr_nbr_heure<?= $j?>" name="curr_nbr_heure<?= $j?>"></td>
 						<td> <span class="table-remove glyphicon glyphicon-remove"></span> </td>
-					</tr>
-				</table>
-				<button class="table-add btn btn-primary">Add Row</button>
+							</tr>
+						<?php
+						$j++;
+						?>
+					</table>
+					<input type="submit" value="valider" name="validationAjoutLigne">
+				</form>
+				<button class="table-add btn btn-primary" name="ajoutLigne">Add Row</button>
 			</div>
 		</div>
 		<script src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script>
