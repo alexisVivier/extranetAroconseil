@@ -5,7 +5,7 @@
 	<title>Page Title</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/styleAlexis.css">
 	<?php 
 		include "connexionBdd.php";
 	?>

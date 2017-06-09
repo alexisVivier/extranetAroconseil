@@ -74,19 +74,6 @@ if(isset($_POST['connexion'])){
 		C12.327,12.018,11.4,12.84,10.305,13.365z M13.502,10h-1.758c0.134-0.632,0.219-1.303,0.246-2h1.99
 		C13.928,8.704,13.762,9.377,13.502,10z M11.99,7c-0.027-0.697-0.112-1.368-0.246-2h1.758c0.26,0.623,0.426,1.296,0.479,2H11.99z" /> </g>
 				</svg>
-<<<<<<< HEAD
-				<p>Bienvenue sur l'extranet d'AroConseil.</p>
-				<p>Pour continuer, merci de vous identifier.</p>
-				<p>
-					<?php echo $erreur ?>
-				</p>
-			</div>
-			<form action="index.php" method="post">
-				<div>
-					<input type="email" name="emailUser" placeholder="Email">
-					<input type="password" name="passwordUser" placeholder="Mot de passe"> </div>
-				<input type="submit" value="Connexion" name="connexion"> </form>
-=======
 				<div>
 					<p id="firstP">Bienvenue sur l'extranet d'AroConseil.</p>
 					<p id="secondP">Pour continuer, merci de vous identifier.</p>
@@ -98,10 +85,26 @@ if(isset($_POST['connexion'])){
 			<form action="index.php" method="post">
 				<div id="champsConnexion">
 					<input type="email" name="emailUser" placeholder="Email">
-					<input type="password" name="passwordUser" placeholder="Mot de passe"> </div>
-				<input type="submit" value="Connexion" name="connexion">
-				</form>
->>>>>>> f6e6da6de579f623c7c84d97df8aba5c888d3d7e
+					<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14 14" style="enable-background:new 0 0 14 14;" xml:space="preserve">
+						<g>
+							<g>
+								<path style="fill:#030104;" d="M7,9L5.268,7.484l-4.952,4.245C0.496,11.896,0.739,12,1.007,12h11.986
+			c0.267,0,0.509-0.104,0.688-0.271L8.732,7.484L7,9z" />
+								<path style="fill:#030104;" d="M13.684,2.271C13.504,2.103,13.262,2,12.993,2H1.007C0.74,2,0.498,2.104,0.318,2.273L7,8
+			L13.684,2.271z" />
+								<polygon style="fill:#030104;" points="0,2.878 0,11.186 4.833,7.079 		" />
+								<polygon style="fill:#030104;" points="9.167,7.079 14,11.186 14,2.875 		" /> </g>
+						</g>
+					</svg>
+					<input type="password" name="passwordUser" placeholder="Mot de passe">
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="512px" height="512px">
+						<g>
+							<g>
+								<path d="M508.305,245.892l-32.425-38.425c-2.979-3.529-7.361-5.565-11.979-5.565H219.74c-19.927-38.63-59.4-63.049-103.304-63.049    C52.232,138.852,0,191.404,0,256s52.232,117.148,116.436,117.148c43.904,0,83.377-24.419,103.304-63.049h29.307l17.245,30.079    c6.006,10.478,21.176,10.498,27.195-0.001l15.47-26.984l15.472,26.985c6.006,10.478,21.176,10.498,27.195-0.001l15.47-26.984    l15.472,26.986c6.006,10.478,21.176,10.498,27.195-0.001l17.243-30.078H463.9c4.617,0,9-2.036,11.979-5.565l32.425-38.425    C513.232,260.27,513.232,251.731,508.305,245.892z M116.436,296.961c-22.488,0-40.784-18.376-40.784-40.961    c0-22.585,18.296-40.961,40.784-40.961S157.22,233.415,157.22,256C157.22,278.585,138.924,296.961,116.436,296.961z" fill="#95989a" /> </g>
+						</g>
+					</svg>
+				</div>
+				<input type="submit" value="Connexion" name="connexion"> </form>
 		</section>
 	</div>
 	<?php 
