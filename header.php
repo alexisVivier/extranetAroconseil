@@ -987,9 +987,9 @@
                             <path d="M0 0h48v48h-48z" fill="none"/>
                     </svg>
                     <ul class="sidebar-children-center">
-                        <li><a class="sidebar-children-style" href="#">Ajouter un utilisateur</a></li>
-                        <li><a class="sidebar-children-style" href="#">Modifier mot de passe</a></li>
-                        <li><a class="sidebar-children-style" href="#">Supprimer un utilisateur</a></li>
+                        <li><a href="#">Ajouter un utilisateur</a></li>
+                        <li><a href="#">Modifier mot de passe</a></li>
+                        <li><a href="#">Supprimer un utilisateur</a></li>
                     </ul>
                 </a>
             </li>

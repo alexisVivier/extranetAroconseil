@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700');
+
+body {
+	margin: 0;
+}
+
+* {
+	box-sizing: border-box;
+	font-family: 'Montserrat', sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover,
+a:active {
+	outline: 0;
+}
+
+/* ALEXIS */
+
+/* HEADER */
+
+
+header svg {
+	width: 64px;
+	height: 64px;
+}
+
+/* FIN HEADER */
+
+/* HEADER DE LA PAGE DE CONNEXION */
+<<<<<<< HEAD
+
+#headerIndex {
+	border-bottom-color: black;
+	border-bottom-width: 3px;
+	border-bottom-style: solid;
+	width: 95%;
+	margin: auto;
+}
+
+#headerIndex svg {
+	width: 125px;
+	margin: 1.5%;
+}
+
+/* FIN HEADER DE LA PAGE DE CONNEXION */
+
+/* PAGE DE CONNEXION */
+
+#index section {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	width: 40%;
+	margin: auto;
+	border: 2px solid black;
+}
+
+#index section svg:first-child {
+	width: 100px;
+	margin: 2%;
+}
+
+#index section #messageConnexion p:first-child {
+	
+} 
+
+
+=======
+
+#headerIndex {
+	border-bottom-color: black;
+	border-bottom-width: 3px;
+	border-bottom-style: solid;
+	width: 95%;
+	margin: auto;
+}
+
+#headerIndex svg {
+	width: 125px;
+	margin: 1.5%;
+}
+
+/* FIN HEADER DE LA PAGE DE CONNEXION */
+
+/* PAGE DE CONNEXION */
+
+#index section {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	width: 50%;
+	margin: auto;
+/*	border: 2px solid black;*/
+	padding: 6% 0 0 0;
+}
+
+#index section svg:first-child {
+	width: 80px;
+	margin: 2%;
+	margin-top: -6%;
+}
+
+#index section #messageConnexion div {
+}
+
+#index section #messageConnexion #firstP{
+	font-weight: bold;
+	font-size: 28px;
+	margin-bottom: -1%;
+} 
+
+#index section #messageConnexion #secondP, #index section #messageConnexion #errorP{
+	font-weight: 300;
+	font-size: 22px;
+	margin-bottom: 6%;
+}
+
+#index section form {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	margin: auto;
+}
+
+#index section form input {
+	margin: auto;
+	width: 100%;
+	padding: 2%;
+}
+
+#index section form input:nth-child(2){
+	margin: 7% 0 0 0;
+}
+
+#index section form input[type=submit] {
+	border: none;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+>>>>>>> f6e6da6de579f623c7c84d97df8aba5c888d3d7e
+
+
+
+/* FIN PAGE DE CONNEXION */
+
+/* PAGE DE D'AJOUT, SUPPRESION, MODIF UTILISATEUR */
+
+#modifsUser {
+	display: flex;
+	justify-content: space-around;
+}
+
+#modifsUser #addUserForm {
+	display: flex;
+	flex-direction: column;
+}
+
+/* FIN PAGE DE D'AJOUT, SUPPRESION, MODIF UTILISATEUR */
+
+/* FIN ALEXIS */
+
+
+/* NATHAN */
+
+#sidebar-container {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 22%;
+}
+
+#sidebar-logo {
+    fill: white;
+    height: 4.5%;
+    width: auto;
+    margin-top: 18%;
+}
+
+.sidebar-menu {
+    margin-top: 18%;
+    padding-left: 0;
+}
+
+.sidebar-menu li {
+    position: relative;
+}
+
+.sidebar-menu li a {
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    display: block;
+    padding: 1.5vh 0 1.5vh 8vh;
+    margin-bottom: 1vh;
+}
+
+.sidebar-children-center {
+    padding-top: 2.5vh;
+}
+
+.sidebar-children-center li {
+    padding-bottom: 1vh;
+    padding-top: 1vh;
+    padding-left: 2vh;
+}
+
+.sidebar-children svg{
+    fill: white;
+    position: absolute;
+    margin-left: 2vh;
+    margin-top: -1vh;
+    width: 40px;
+    height: auto;
+}
+
+.sidebar-children a svg {
+  transition: all .5s;
+}
+
+li.active.sidebar-children a svg {
+	-moz-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+.sidebar-menu .sidebar-children > ul {
+    display: none;
+}
+
+#sidebar-block-profile {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: 22%;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    left: 0;
+    padding-bottom: 5vh;
+}
+
+#sidebar-profile-svg-user {
+    width: 62px;
+    height: 62px;
+    margin-right: 2vh;
+}
+
+#sidebar-profile-text {
+    color: white;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: 1vh;
+}
+
+#sidebar-user-text {
+    color: white;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    margin: 0;
+}
+
+#sidebar-logout-svg {
+    width: 35px;
+    height: 35px;
+    margin-left: 6vh;
+}
+
+.sidebar-parent-hover a {
+    color: white;
+    transition-duration: 0.7s;
+}
+
+.sidebar-parent-hover a:hover {
+    background-color: white;
+    color: black;
+}
+
+.sidebar-parent-hover a:hover svg {
+    fill: black;
+}
+
+.sidebar-children-center {
+    padding-top: 1.5vh;
+    padding-left: 10vh;
+}
+
+ul.sidebar-children-center a {
+    display: none; 
+}
+
+.sidebar-children-center li a{
+    padding: 0;
+    margin: 0;
+    color: white;
+    background-color: transparent;
+    display: block;
+}
+
+.sidebar-children-center li a:hover {
+    color: #999999;
+    background-color: transparent;
+}
+
+/* FIN NATHAN */
