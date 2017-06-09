@@ -31,142 +31,11 @@ header svg {
 /* FIN HEADER */
 
 /* HEADER DE LA PAGE DE CONNEXION */
-<<<<<<< HEAD
-
-#headerIndex {
-	border-bottom-color: black;
-	border-bottom-width: 3px;
-	border-bottom-style: solid;
-	width: 95%;
-	margin: auto;
-}
-
-#headerIndex svg {
-	width: 125px;
-	margin: 1.5%;
-}
-
-/* FIN HEADER DE LA PAGE DE CONNEXION */
-
-/* PAGE DE CONNEXION */
-
-#index section {
-	display: flex;
-	flex-direction: column;
-	text-align: center;
-	width: 40%;
-	margin: auto;
-	border: 2px solid black;
-}
-
-#index section svg:first-child {
-	width: 100px;
-	margin: 2%;
-}
-
-#index section #messageConnexion p:first-child {
-	
-} 
-
-
-=======
-
-#headerIndex {
-	border-bottom-color: black;
-	border-bottom-width: 3px;
-	border-bottom-style: solid;
-	width: 95%;
-	margin: auto;
-}
-
-#headerIndex svg {
-	width: 125px;
-	margin: 1.5%;
-}
-
-/* FIN HEADER DE LA PAGE DE CONNEXION */
-
-/* PAGE DE CONNEXION */
-
-#index section {
-	display: flex;
-	flex-direction: column;
-	text-align: center;
-	width: 50%;
-	margin: auto;
-/*	border: 2px solid black;*/
-	padding: 6% 0 0 0;
-}
-
-#index section svg:first-child {
-	width: 80px;
-	margin: 2%;
-	margin-top: -6%;
-}
-
-#index section #messageConnexion div {
-}
-
-#index section #messageConnexion #firstP{
-	font-weight: bold;
-	font-size: 28px;
-	margin-bottom: -1%;
-} 
-
-#index section #messageConnexion #secondP, #index section #messageConnexion #errorP{
-	font-weight: 300;
-	font-size: 22px;
-	margin-bottom: 6%;
-}
-
-#index section form {
-	display: flex;
-	flex-direction: column;
-	width: 50%;
-	margin: auto;
-}
-
-#index section form input {
-	margin: auto;
-	width: 100%;
-	padding: 2%;
-}
-
-#index section form input:nth-child(2){
-	margin: 7% 0 0 0;
-}
-
-#index section form input[type=submit] {
-	border: none;
-	width: 80%;
-	margin-left: auto;
-	margin-right: auto;
-}
->>>>>>> f6e6da6de579f623c7c84d97df8aba5c888d3d7e
-
-
-
-/* FIN PAGE DE CONNEXION */
-
-/* PAGE DE D'AJOUT, SUPPRESION, MODIF UTILISATEUR */
-
-#modifsUser {
-	display: flex;
-	justify-content: space-around;
-}
-
-#modifsUser #addUserForm {
-	display: flex;
-	flex-direction: column;
-}
-
-/* FIN PAGE DE D'AJOUT, SUPPRESION, MODIF UTILISATEUR */
-
-/* FIN ALEXIS */
-
 
 /* NATHAN */
 
+
+/* ================================= H E A D E R =================================*/
 #sidebar-container {
     display: flex;
     flex-direction: column;
@@ -174,7 +43,7 @@ header svg {
     top: 0;
     left: 0;
     height: 100vh;
-    width: 22%;
+    width: 45vh;
 }
 
 #sidebar-logo {
@@ -312,5 +181,141 @@ ul.sidebar-children-center a {
     color: #999999;
     background-color: transparent;
 }
+
+/* ============================== BASE PAGE GLOBALE ==============================*/
+
+body {
+    display: flex;
+    flex-direction: row;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* ============================= HAUT DE PAGE TITLE ==============================*/
+
+.title-page-container {
+    padding: 5vh 12vh 3vh 12vh;
+}
+
+.title-page-block-icon-title svg {
+    width: 55px;
+    height: 55px;
+    fill: black;
+}
+
+.title-page-block-icon-title h1 {
+    color: black;
+    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin-left: 2vh;
+}
+
+.title-page-block-icon-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 2.5vh;
+}
+
+.title-page-block-line {
+    width: 100%;
+    height: 3px;
+    background-color: black;
+}
+
+/* ============================== AJOUT UTILISATEUR ==============================*/
+
+#addUserForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 6vh 40vh 0 40vh;
+}
+
+#addUserForm input{
+    color: black;
+    border: 1px solid #95989A;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    padding: 1vh 2vh 1vh 2vh;
+    width: 100%;
+    margin-bottom: 3.5vh;
+}
+
+#addUser-input-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#addUser-input-row input {
+    width: 48%;
+}
+
+#addUserForm select {
+    color: #757575;
+    border: 1px solid #95989A;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    padding: 1vh 2vh 1vh 2vh;
+    width: 48%;
+    align-self: flex-start;
+    margin-bottom: 10vh;
+}
+
+
+
+
+
+.button-style-submit {
+    display: flex;
+    flex-direction: row;
+    border: 3px solid black;
+}
+
+.button-style-submit-svg-block {
+    border-left: 3px solid black;
+    width: 40px;
+    height: 40px;
+}
+
+.button-style-submit-svg-block svg {
+    fill: black;
+    width: 40px;
+    height: 40px;
+    padding-right: 2px;
+}
+
+input#addUser-button-submit {
+    width: 150px;
+    height: 40px;
+    text-decoration: none;
+    border: none;
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin: 0;
+    transition-duration: 0.7s;
+    cursor: pointer;
+}
+
+input#addUser-button-submit:hover {
+    background-color: black;
+    color: white;
+}
+
+
+
+
 
 /* FIN NATHAN */
