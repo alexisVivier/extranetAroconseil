@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/stylenathan.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
     <?php 
@@ -987,7 +987,7 @@
                             <path d="M0 0h48v48h-48z" fill="none"/>
                     </svg>
                     <ul class="sidebar-children-center">
-                        <li><a href="#">Ajouter un utilisateur</a></li>
+                        <li><a href="addUser.php">Ajouter un utilisateur</a></li>
                         <li><a href="#">Modifier mot de passe</a></li>
                         <li><a href="#">Supprimer un utilisateur</a></li>
                     </ul>
