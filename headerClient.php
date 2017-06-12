@@ -996,20 +996,8 @@
 			<ul class="sidebar-menu">
 				<li class="sidebar-parent-hover"><a href="#">Visualisation des contrats</a></li>
 				<li class="sidebar-parent-hover"><a href="#">Visualisation des factures</a></li>
-				<li class="sidebar-parent-hover"><a href="maintenance.php">Suivi de la maintenance</a></li>
+				<li class="sidebar-parent-hover"><a href="#">Suivi de la maintenance</a></li>
 				<li class="sidebar-parent-hover"><a href="#">Campagne E-Mailing</a></li>
-				<li class="sidebar-children sidebar-parent-hover"> <a href="#">Modification utilisateur
-                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
-                            <path d="M20 12l-2.83 2.83 9.17 9.17-9.17 9.17 2.83 2.83 12-12z"/>
-                            <path d="M0 0h48v48h-48z" fill="none"/>
-                    </svg>
-                    <ul class="sidebar-children-center">
-                        <li><a href="addUser.php">Ajouter un utilisateur</a></li>
-				<li><a href="modificationMotDePasse.php">Modifier mot de passe</a></li>
-				<li><a href="deleteUser.php" target="_blank">Supprimer un utilisateur</a></li>
-			</ul>
-			</a>
-			</li>
 			</ul>
 			<div id="sidebar-block-profile">
 				<svg id="sidebar-profile-svg-user" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 299.997 299.997" style="enable-background:new 0 0 299.997 299.997;" xml:space="preserve" width="512px" height="512px">

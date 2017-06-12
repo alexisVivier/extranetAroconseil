@@ -26,6 +26,11 @@ a:active {
 
 /* HEADER DE LA PAGE DE CONNEXION */
 
+#headerIndexBody {
+	display: flex;
+	flex-direction: column;
+}
+
 #headerIndex {
 	border-bottom-color: black;
 	border-bottom-width: 3px;
@@ -43,7 +48,7 @@ a:active {
 
 /* PAGE DE CONNEXION */
 
-#index section {
+#index {
 	display: flex;
 	flex-direction: column;
 	text-align: center;
@@ -53,66 +58,128 @@ a:active {
 	padding: 6% 0 0 0;
 }
 
-#index section svg:first-child {
+#index #messageConnexion svg {
 	width: 80px;
 	margin: 2%;
 	margin-top: -6%;
 }
 
-#index section #messageConnexion div {
+#index #messageConnexion div {
 }
 
-#index section #messageConnexion #firstP{
+#index #messageConnexion #firstP{
 	font-weight: 700;
 	font-size: 28px;
 	margin-bottom: -1%;
 } 
 
-#index section #messageConnexion #secondP, #index section #messageConnexion #errorP{
+#index #messageConnexion #secondP, #index section #messageConnexion #errorP{
 	font-weight: 300;
 	font-size: 22px;
 	margin-bottom: 6%;
 }
 
-#index section form {
+#index form {
 	display: flex;
 	flex-direction: column;
 	width: 50%;
 	margin: auto;
 }
 
-#index section form input {
+#index form input {
 	margin: auto;
 	width: 100%;
 	padding: 2%;
 }
 
-#index section form input:nth-child(2){
+#index form input:nth-child(2){
 	margin: 7% 0 0 0;
 }
 
-#index section form input[type=submit] {
-	border: none;
-	width: 80%;
-	margin-left: auto;
-	margin-right: auto;
+.button-style-submit {
+	margin: 2vw auto;
+}
+
+#button-style-submit-index {
+    width: 40%;
+}
+
+.button-style-submit svg {
+	width: 40px;
+	height: 40px;
+}
+
+div.input-container-icon-index {
+	margin-top: -2vw;
 }
 
 /* FIN PAGE DE CONNEXION */
 
-/* PAGE DE D'AJOUT, SUPPRESION, MODIF UTILISATEUR */
+/* PAGE DE SUPPRESION */
 
-#modifsUser {
-	display: flex;
-	justify-content: space-around;
+#deleteUserForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 6vh 40vh 0 40vh;
 }
 
-#modifsUser #addUserForm {
+#deleteUserForm select {
+	color: #757575;
+	border: 1px solid #95989A;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    padding: 1vh 2vh 1vh 2vh;
+    margin: 5vh 0 10vh 0;
+	width: 100%;
+}
+
+/* MODIFICATION DE MOT DE PASSE */
+
+#changePasswordFrom {
+	width: 50%;
+	margin: 0 auto;
+}
+
+#changePasswordFrom select {
+	color: #757575;
+	border: 1px solid #95989A;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    padding: 1vh 2vh 1vh 2vh;
+    margin: 5vh 0 3.5vh 0;
+	width: 100%;
+}
+
+#changePasswordFrom #inputsChangePassword {
 	display: flex;
 	flex-direction: column;
+	width: 100%;
+	margin: 0 auto;
+    margin-bottom: 8vh;
 }
 
-/* FIN PAGE DE D'AJOUT, SUPPRESION, MODIF UTILISATEUR */
+#changePasswordFrom input[type=password]{
+    color: black;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    padding: 1vh 2vh 1vh 2vh;
+    width: 100%;
+}
+
+.button-style-submit-password {
+	width: 25%;
+	margin: 2vw auto;
+}
+
+#changePasswordFrom input[type=submit] {
+	font-weight: 700;
+}
+
+/* FIN MODIFICATION DE MOT DE PASSE */
 
 /* FIN ALEXIS */
 

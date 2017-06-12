@@ -1,41 +1,45 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700');
-
 body {
-	margin: 0;
+    margin: 0;
 }
 
 * {
-	box-sizing: border-box;
-	font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
 a {
-	text-decoration: none;
+    text-decoration: none;
 }
 
 a:hover,
 a:active {
-	outline: 0;
+    outline: 0;
 }
+
 
 /* ALEXIS */
 
+
 /* HEADER */
 
-
 header svg {
-	width: 64px;
-	height: 64px;
+    width: 64px;
+    height: 64px;
 }
+
 
 /* FIN HEADER */
 
+
 /* HEADER DE LA PAGE DE CONNEXION */
+
 
 /* NATHAN */
 
 
 /* ================================= H E A D E R =================================*/
+
 #sidebar-container {
     display: flex;
     flex-direction: column;
@@ -81,7 +85,7 @@ header svg {
     padding-left: 2vh;
 }
 
-.sidebar-children svg{
+.sidebar-children svg {
     fill: white;
     position: absolute;
     margin-left: 2vh;
@@ -91,15 +95,16 @@ header svg {
 }
 
 .sidebar-children a svg {
-  transition: all .5s;
+    transition: all .5s;
 }
 
 li.active.sidebar-children a svg {
-	-moz-transform: rotate(90deg);
-	-o-transform: rotate(90deg);
-	-webkit-transform: rotate(90deg);
-	transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
 }
+
 .sidebar-menu .sidebar-children > ul {
     display: none;
 }
@@ -166,10 +171,10 @@ li.active.sidebar-children a svg {
 }
 
 ul.sidebar-children-center a {
-    display: none; 
+    display: none;
 }
 
-.sidebar-children-center li a{
+.sidebar-children-center li a {
     padding: 0;
     margin: 0;
     color: white;
@@ -181,6 +186,7 @@ ul.sidebar-children-center a {
     color: #999999;
     background-color: transparent;
 }
+
 
 /* ============================== BASE PAGE GLOBALE ==============================*/
 
@@ -194,6 +200,7 @@ section {
     flex-direction: column;
     width: 100%;
 }
+
 
 /* ============================= HAUT DE PAGE TITLE ==============================*/
 
@@ -228,6 +235,7 @@ section {
     background-color: black;
 }
 
+
 /* ============================== AJOUT UTILISATEUR ==============================*/
 
 #addUserForm {
@@ -237,15 +245,14 @@ section {
     margin: 6vh 40vh 0 40vh;
 }
 
-#addUserForm input{
+#addUserForm input {
     color: black;
     border: 1px solid #95989A;
     font-size: 16px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
-    padding: 1vh 2vh 1vh 2vh;
+    padding: 1vh 5vh 1vh 2vh;
     width: 100%;
-    margin-bottom: 3.5vh;
 }
 
 #addUser-input-row {
@@ -253,6 +260,7 @@ section {
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+    margin-bottom: 3.5vh;
 }
 
 #addUser-input-row input {
@@ -272,8 +280,32 @@ section {
 }
 
 
+/* ============================== ICON IN INPUT ==============================*/
+
+.input-container-icon {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 3.5vh;
+    width: 100%;
+}
+
+.input-container-icon input {
+    margin: 0;
+    padding-left: 30px;
+}
+
+.input-container-icon-svg {
+    position: absolute;
+    bottom: 9px;
+    right: 15px;
+    width: 20px;
+    height: 20px;
+    fill: #95989A;
+}
 
 
+/* ============================== BOUTON STYLEE ==============================*/
 
 .button-style-submit {
     display: flex;
@@ -285,6 +317,7 @@ section {
     border-left: 3px solid black;
     width: 40px;
     height: 40px;
+    transition-duration: 0.7s;
 }
 
 .button-style-submit-svg-block svg {
@@ -307,6 +340,7 @@ input#addUser-button-submit {
     margin: 0;
     transition-duration: 0.7s;
     cursor: pointer;
+    padding: 1vh;
 }
 
 input#addUser-button-submit:hover {
@@ -315,7 +349,239 @@ input#addUser-button-submit:hover {
 }
 
 
+/* ============================== PAGE MAINTENANCE ==============================*/
 
+.maintenance-page-container {
+    margin: 5vh 12vh 0 12vh;
+}
+
+
+/* ============================== PAGE TABLEAU BOUTTON ==============================*/
+
+.page-tabs-head-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 8vh;
+}
+
+
+/* BAR DE RECHERCHE */
+
+.searchBar-container {
+    display: flex;
+    flex-direction: row;
+    width: 28%;
+}
+
+.searchBar-input {
+    color: black;
+    border: 1px solid black;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    padding: 0.8vh 5vh 0.8vh 2vh;
+    width: 100%;
+    font-size: 16px;
+}
+
+.searchBar-block-icon {
+    background-color: black;
+    height: auto;
+    width: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchBar-block-icon svg {
+    fill: white;
+    height: 20px;
+    width: 20px;
+}
+
+
+/* CONTENAIRE DES DEUX BOUTONS NOIRS */
+
+.tabs-head-button-addcontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+/* BOUTON AJOUTER UNE LIGNE AU TABLEAU */
+
+.addLine-container {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+}
+
+.addLine-block-icon {
+    background-color: black;
+    width: 4.5vh;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-duration: 0.5s;
+}
+
+.addLine-block-icon svg {
+    fill: white;
+    height: 20px;
+    width: 20px;
+}
+
+.addLine-container button {
+    color: white;
+    background-color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    padding: 1vh 3vh 1vh 3vh;
+    margin-left: 0.4vh;
+    width: 100%;
+    border: none;
+    transition-duration: 0.5s;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.addLine-container:hover .addLine-block-icon {
+    background-color: #444444;
+}
+
+.addLine-container:hover button {
+    background-color: #444444;
+}
+
+
+/* BOUTON ENREGISTRER LES MODIFICATIONS */
+
+.modifLine-container {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    margin-left: 5vh;  
+}
+
+.modifLine-block-icon {
+    background-color: black;
+    width: 5.5vh;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-duration: 0.5s;
+}
+
+.modifLine-block-icon svg {
+    fill: white;
+    height: 18px;
+    width: 18px;
+}
+
+.modifLine-container input {
+    color: white;
+    background-color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    padding: 1vh 3vh 1vh 3vh;
+    margin-left: 0.4vh;
+    width: 100%;
+    border: none;
+    transition-duration: 0.5s;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.modifLine-container:hover .modifLine-block-icon {
+    background-color: #444444;
+}
+
+.modifLine-container:hover input {
+    background-color: #444444;
+}
+
+
+/* ============================== TABLEAU ==============================*/
+
+
+.glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.glyphicon-remove:before {
+    display: block;
+    content: ' ';
+    background-image: url(../icon/cross-delete-line.svg);
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    height: 20px;
+    width: 20px;
+}
+
+.hide {
+    display: none!important;
+}
+
+table.table {
+    width: 100%;
+    font-size: 16px;
+    border-collapse: collapse;
+}
+
+table.table tbody tr td input{
+    margin-right: 1.5vh;
+    margin-left: 2vh;
+    border: none;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+table.table tbody tr {
+    height: 5vh;
+    border-bottom: 1px solid black;
+}
+
+.table-name-column {
+    background-color: black;
+    color: white;
+    height: 5vh;
+}
+
+.table-name-column th {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+.form-table {
+    max-height: 55vh;
+    overflow-y: scroll;
+}
+
+.table-name-column th {
+    cursor: pointer;
+}
+
+.table-name-column th svg{
+    fill: white;
+    height: 20px;
+    width: 20px;
+    margin-left: 0.5vh;
+}
+
+.table-name-column-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
 /* FIN NATHAN */

@@ -6,12 +6,13 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/styleAlexis.css">
+	<link rel="stylesheet" type="text/css" href="css/stylenathan.css">
 	<?php 
 		include "connexionBdd.php";
 	?>
 </head>
 
-<body>
+<body id="headerIndexBody">
 	<div id="headerIndex">
 		<a href="index.php">
 			<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 70.865 26.918" enable-background="new 0 0 70.865 26.918" xml:space="preserve">

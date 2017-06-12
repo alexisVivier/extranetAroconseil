@@ -96,7 +96,7 @@ if(isset($_POST['deleteUser'])){
 		</div>
 		<input type="submit" value="Changer le mot de passe" name="changerMotDePasse">
 	</form>
-	<form action="formAddUser.php" method="post" id="deleteUserForm">
+	<form action="modifsUser.php" method="post" id="deleteUserForm">
 		<select name="userToDelete">
 			<?php
 			$test_select_user_to_delete = "SELECT * FROM user";

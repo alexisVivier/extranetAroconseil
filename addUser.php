@@ -102,9 +102,135 @@ if(isset($_POST['addUserButton'])){
                 <input type="text" name="lastname" placeholder="Nom"/>
                 <input type="text" name="firstname" placeholder="Prénom"/>
             </div>
-            <input type="text" name="society" placeholder="Nom de la société">
-            <input type="email" name="mail" placeholder="E-mail"/>
-            <input type="password" name="password" placeholder="Mot de passe"/>
+            <div class="input-container-icon">
+                <input type="text" name="society" placeholder="Nom de la société">
+                <svg class="input-container-icon-svg" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	            width="510px" height="510px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
+<g>
+	<g id="hotel">
+		<path d="M382.5,51V0h-255v51H51v459h153v-51h102v51h153V51H382.5z M229.5,382.5h-51v-51h51V382.5z M229.5,280.5h-51v-51h51V280.5z
+			 M229.5,178.5h-51v-51h51V178.5z M331.5,382.5h-51v-51h51V382.5z M331.5,280.5h-51v-51h51V280.5z M331.5,178.5h-51v-51h51V178.5z"
+			/>
+	</g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+            </div>
+            <div class="input-container-icon">
+                <input type="email" name="mail" placeholder="E-mail"/>
+                <svg class="input-container-icon-svg" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 14 14" style="enable-background:new 0 0 14 14;" xml:space="preserve">
+<g>
+	<g>
+		<path style="fill:#95989A;" d="M7,9L5.268,7.484l-4.952,4.245C0.496,11.896,0.739,12,1.007,12h11.986
+			c0.267,0,0.509-0.104,0.688-0.271L8.732,7.484L7,9z"/>
+		<path style="fill:#95989A;" d="M13.684,2.271C13.504,2.103,13.262,2,12.993,2H1.007C0.74,2,0.498,2.104,0.318,2.273L7,8
+			L13.684,2.271z"/>
+		<polygon style="fill:#95989A;" points="0,2.878 0,11.186 4.833,7.079 		"/>
+		<polygon style="fill:#95989A;" points="9.167,7.079 14,11.186 14,2.875 		"/>
+	</g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+             </div>
+            <div class="input-container-icon">
+                <input type="password" name="password" placeholder="Mot de passe"/>
+                <svg class="input-container-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="512px" height="512px">
+<g>
+	<g>
+		<path d="M508.305,245.892l-32.425-38.425c-2.979-3.529-7.361-5.565-11.979-5.565H219.74c-19.927-38.63-59.4-63.049-103.304-63.049    C52.232,138.852,0,191.404,0,256s52.232,117.148,116.436,117.148c43.904,0,83.377-24.419,103.304-63.049h29.307l17.245,30.079    c6.006,10.478,21.176,10.498,27.195-0.001l15.47-26.984l15.472,26.985c6.006,10.478,21.176,10.498,27.195-0.001l15.47-26.984    l15.472,26.986c6.006,10.478,21.176,10.498,27.195-0.001l17.243-30.078H463.9c4.617,0,9-2.036,11.979-5.565l32.425-38.425    C513.232,260.27,513.232,251.731,508.305,245.892z M116.436,296.961c-22.488,0-40.784-18.376-40.784-40.961    c0-22.585,18.296-40.961,40.784-40.961S157.22,233.415,157.22,256C157.22,278.585,138.924,296.961,116.436,296.961z" fill="#95989a"/>
+	</g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+            </div>
             <select name="admin">
                 <option value="1">Administrateur</option>
                 <option value="0">Client</option>

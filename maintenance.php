@@ -1,6 +1,15 @@
 <?php
 
+session_start();
+
 include 'connexionBdd.php';
+
+if ($_SESSION["admin"] === 1){
+	include ("header.php");
+}
+else if($_SESSION["admin"] === 0){
+	include ("headerClient.php");
+}
 
 $test_maintenance_count_all = "SELECT count(*) AS nbrLignes FROM maintenance";
 $result_maintenance_count_all = mysql_query($test_maintenance_count_all);
@@ -50,21 +59,115 @@ $result_ligne_to_delete = mysql_query($test_ligne_to_delete);
 	<head>
 		<meta charset='UTF-8'>
 		<meta name="robots" content="noindex">
-		<link rel='stylesheet prefetch' href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css'>
-		<link rel='stylesheet prefetch' href='//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'> </head>
+<!--		<link rel='stylesheet prefetch' href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css'>-->
+		<link rel='stylesheet prefetch' href='//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'> 
+        
+    </head>
 
 	<body>
-		<div class="container">
-			<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Rechercher une société" title="Type in a name">
+        <section>
+        <div class="title-page-container">
+            <div class="title-page-block-icon-title">
+                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 489.8 489.8" style="enable-background:new 0 0 489.8 489.8;" xml:space="preserve">
+            <g>
+                <g>
+                    <path d="M478.1,466.4H23.4V11.7C23.4,5.5,18.3,0,11.7,0S0,5.1,0,11.7v466.4c0,6.2,5.1,11.7,11.7,11.7h466.4
+                        c6.2,0,11.7-5.1,11.7-11.7C489.8,471.9,484.7,466.4,478.1,466.4z"/>
+                    <rect x="57.2" y="144.6" width="97.6" height="299.3"/>
+                    <rect x="195.9" y="28" width="97.6" height="415.9"/>
+                    <rect x="334.7" y="160.9" width="97.6" height="282.9"/>
+                </g>
+            </g>
+            
+                </svg>
+                <h1>Suivi de la maintenance</h1>
+            </div>
+            <div class="title-page-block-line"></div>
+        </div>
+		<div class="maintenance-page-container">
+            <div class="page-tabs-head-button">
+                <div class="tabs-head-button-addcontainer">
+                    <div class="addLine-container">
+                        <div class="addLine-block-icon">
+                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                 viewBox="0 0 42 42" style="enable-background:new 0 0 42 42;" xml:space="preserve">
+                            <polygon points="42,19 23,19 23,0 19,0 19,19 0,19 0,23 19,23 19,42 23,42 23,23 42,23 "/>
+                            </svg>
+                        </div>
+                        <a href="maintenanceAjoutLigne.php"><button name="ajoutLigne">Ajouter une demande</button></a>
+                    </div>
+                    <div class="modifLine-container">
+                        <div class="modifLine-block-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve" width="512px" height="512px">
+                            <g>
+                                <path d="M2.083,9H0.062H0v5l1.481-1.361C2.932,14.673,5.311,16,8,16c4.08,0,7.446-3.054,7.938-7h-2.021   c-0.476,2.838-2.944,5-5.917,5c-2.106,0-3.96-1.086-5.03-2.729L5.441,9H2.083z" fill="#FFFFFF"/>
+                                <path d="M8,0C3.92,0,0.554,3.054,0.062,7h2.021C2.559,4.162,5.027,2,8,2c2.169,0,4.07,1.151,5.124,2.876   L11,7h2h0.917h2.021H16V2l-1.432,1.432C13.123,1.357,10.72,0,8,0z" fill="#FFFFFF"/>
+                            </g>
+                            </svg>
+                        </div>
+                        <input type="submit" value="Enregistrer les modifications" name="modifierMaintenance">
+                    </div>
+                </div>
+                <div class="searchBar-container">
+                    <input class="searchBar-input" type="text" id="myInput" onkeyup="myFunction()" placeholder="Rechercher une société" title="Type in a name">
+                    <div class="searchBar-block-icon">
+                        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        viewBox="0 0 250.313 250.313" style="enable-background:new 0 0 250.313 250.313;" xml:space="preserve">
+    <g id="Search">
+        <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M244.186,214.604l-54.379-54.378c-0.289-0.289-0.628-0.491-0.93-0.76
+            c10.7-16.231,16.945-35.66,16.945-56.554C205.822,46.075,159.747,0,102.911,0S0,46.075,0,102.911
+            c0,56.835,46.074,102.911,102.91,102.911c20.895,0,40.323-6.245,56.554-16.945c0.269,0.301,0.47,0.64,0.759,0.929l54.38,54.38
+            c8.169,8.168,21.413,8.168,29.583,0C252.354,236.017,252.354,222.773,244.186,214.604z M102.911,170.146
+            c-37.134,0-67.236-30.102-67.236-67.235c0-37.134,30.103-67.236,67.236-67.236c37.132,0,67.235,30.103,67.235,67.236
+            C170.146,140.044,140.043,170.146,102.911,170.146z"/>
+    </g>
+    </svg>
+                    </div>
+                </div>
+            </div>
 			<div id="table" class="table-editable">
-				<form action='maintenance.php' method='POST' name="maintenanceForm">
+				<form class="form-table" action='maintenance.php' method='POST' name="maintenanceForm">
 					<table class="table">
-						<tr>
-							<th onclick='sortTable(0)'>Société</th>
-							<th onclick='sortTable(1)'>Année</th>
-							<th onclick='sortTable(2)'>Date</th>
+						<tr class="table-name-column">
+							<th onclick='sortTable(0)'>
+                                <div class="table-name-column-icon-container">
+                                    <p>Société</p>
+                                    <svg version="1.1" xmlns="http://www.w3.org/
+                                    3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+                                    <path d="M11 7h-6l3-4z"></path>
+                                    <path d="M5 9h6l-3 4z"></path>
+                                    </svg>
+                                </div>
+                            </th>
+							<th onclick='sortTable(1)'>
+                                <div class="table-name-column-icon-container">
+                                    <p>Année</p>
+                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+                                    <path d="M11 7h-6l3-4z"></path>
+                                    <path d="M5 9h6l-3 4z"></path>
+                                    </svg>
+                                </div>
+                            </th>
+							<th onclick='sortTable(2)'>
+                                <div class="table-name-column-icon-container">
+                                    <p>Date</p>
+                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+                                    <path d="M11 7h-6l3-4z"></path>
+                                    <path d="M5 9h6l-3 4z"></path>
+                                    </svg>
+                                </div>
+                            </th>
 							<th>Demande</th>
-							<th onclick='sortTable(3)'>Nombre heures</th>
+							<th onclick='sortTable(3)'>
+                                <div class="table-name-column-icon-container">
+                                    <p>Nombre heures</p>
+                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+                                    <path d="M11 7h-6l3-4z"></path>
+                                    <path d="M5 9h6l-3 4z"></path>
+                                    </svg>
+                                </div>
+                            </th>
 						</tr>
 						<script type="text/javascript">
 							function updateData() {
@@ -90,6 +193,7 @@ $result_ligne_to_delete = mysql_query($test_ligne_to_delete);
                 $result_maintenance_select_all = mysql_query($test_maintenance_select_all);
                 while($data_maintenance_select_all=mysql_fetch_array($result_maintenance_select_all)){
                     ?>
+                        
 							<tr>
 								<td contenteditable='false'>
 									<input type='text' id='society<?=$i?>' name='society<?=$i?>' value="<?php echo $data_maintenance_select_all['society_maintenance']?>" onchange="updateData();">
@@ -113,7 +217,7 @@ $result_ligne_to_delete = mysql_query($test_ligne_to_delete);
                             $i++;
                 }
                 ?>
-								<input type="submit" value="Modifier" name="modifierMaintenance">
+								
 								<!-- Adding new row line -->
 								<tr class="hide">
 									<td contenteditable="false">
@@ -138,13 +242,14 @@ $result_ligne_to_delete = mysql_query($test_ligne_to_delete);
 							echo $j;?>
 											<input type="hidden" id="curr_nbr_heure<?= $i?>" name="curr_nbr_heure<?= $i?>">
 									</td>
-									<td> <span class="table-remove glyphicon glyphicon-remove"></span> </td>
+									<td> <span id="icon-delete-line-table" class="glyphicon glyphicon-remove"></span> </td>
 								</tr>
 					</table>
 				</form>
-				<a href="maintenanceAjoutLigne.php"><button class="table-add btn btn-primary" name="ajoutLigne">Add Row</button></a>
+				
 			</div>
 		</div>
+        </section>
 		<!--
 		<script src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script>
 		<script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>

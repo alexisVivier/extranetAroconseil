@@ -32,6 +32,8 @@ if(isset($_POST['connexion'])){
 		if ($mdpUser == $password && $password != ""){
 			header('Location: hubExtranet.php');
 			$_SESSION["login"] = true;
+			$_SESSION["mail"] = htmlspecialchars($_POST['emailUser']);
+			echo $mailUser;
 			$test_admin = "SELECT admin FROM user WHERE mail = '".$email."'";
 			$result_admin = mysql_query($test_admin);
 			while($data_admin=mysql_fetch_array($result_admin)){
@@ -57,11 +59,10 @@ if(isset($_POST['connexion'])){
 
 ?>
 	<div id="index">
-		<section>
-			<div id="messageConnexion">
-				<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 15 15" style="enable-background:new 0 0 15 15;" xml:space="preserve">
-					<g>
-						<path style="fill:#030104;" d="M14.982,7C14.736,3.256,11.744,0.263,8,0.017V0H7.5H7v0.017C3.256,0.263,0.263,3.256,0.017,7H0v0.5
+		<div id="messageConnexion">
+			<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 15 15" style="enable-background:new 0 0 15 15;" xml:space="preserve">
+				<g>
+					<path style="fill:#030104;" d="M14.982,7C14.736,3.256,11.744,0.263,8,0.017V0H7.5H7v0.017C3.256,0.263,0.263,3.256,0.017,7H0v0.5
 		V8h0.017C0.263,11.744,3.256,14.736,7,14.982V15h0.5H8v-0.018c3.744-0.246,6.736-3.238,6.982-6.982H15V7.5V7H14.982z M4.695,1.635
 		C4.212,2.277,3.811,3.082,3.519,4H2.021C2.673,2.983,3.599,2.16,4.695,1.635z M1.498,5h1.758C3.122,5.632,3.037,6.303,3.01,7H1.019
 		C1.072,6.296,1.238,5.623,1.498,5z M1.019,8H3.01c0.027,0.697,0.112,1.368,0.246,2H1.498C1.238,9.377,1.072,8.704,1.019,8z
@@ -73,39 +74,48 @@ if(isset($_POST['connexion'])){
 		C9.913,12.557,9.027,13.661,8,13.936z M10.305,13.365c0.483-0.643,0.885-1.447,1.178-2.365h1.496
 		C12.327,12.018,11.4,12.84,10.305,13.365z M13.502,10h-1.758c0.134-0.632,0.219-1.303,0.246-2h1.99
 		C13.928,8.704,13.762,9.377,13.502,10z M11.99,7c-0.027-0.697-0.112-1.368-0.246-2h1.758c0.26,0.623,0.426,1.296,0.479,2H11.99z" /> </g>
-				</svg>
-				<div>
-					<p id="firstP">Bienvenue sur l'extranet d'AroConseil.</p>
-					<p id="secondP">Pour continuer, merci de vous identifier.</p>
-					<p id="errorP">
-						<?php echo $erreur ?>
-					</p>
-				</div>
+			</svg>
+			<div>
+				<p id="firstP">Bienvenue sur l'extranet d'AroConseil.</p>
+				<p id="secondP">Pour continuer, merci de vous identifier.</p>
+				<p id="errorP">
+					<?php echo $erreur ?>
+				</p>
 			</div>
-			<form action="index.php" method="post">
-				<div id="champsConnexion">
-					<input type="email" name="emailUser" placeholder="Email">
-					<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14 14" style="enable-background:new 0 0 14 14;" xml:space="preserve">
+		</div>
+		<form action="index.php" method="post">
+			<div id="champsConnexion">
+				<div class="input-container-icon">
+					<svg class="input-container-icon-svg" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14 14" style="enable-background:new 0 0 14 14;" xml:space="preserve">
 						<g>
 							<g>
-								<path style="fill:#030104;" d="M7,9L5.268,7.484l-4.952,4.245C0.496,11.896,0.739,12,1.007,12h11.986
+								<path d="M7,9L5.268,7.484l-4.952,4.245C0.496,11.896,0.739,12,1.007,12h11.986
 			c0.267,0,0.509-0.104,0.688-0.271L8.732,7.484L7,9z" />
-								<path style="fill:#030104;" d="M13.684,2.271C13.504,2.103,13.262,2,12.993,2H1.007C0.74,2,0.498,2.104,0.318,2.273L7,8
+								<path d="M13.684,2.271C13.504,2.103,13.262,2,12.993,2H1.007C0.74,2,0.498,2.104,0.318,2.273L7,8
 			L13.684,2.271z" />
-								<polygon style="fill:#030104;" points="0,2.878 0,11.186 4.833,7.079 		" />
-								<polygon style="fill:#030104;" points="9.167,7.079 14,11.186 14,2.875 		" /> </g>
+								<polygon points="0,2.878 0,11.186 4.833,7.079 		" />
+								<polygon points="9.167,7.079 14,11.186 14,2.875 		" /> </g>
 						</g>
 					</svg>
-					<input type="password" name="passwordUser" placeholder="Mot de passe">
-					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="512px" height="512px">
+					<input type="email" name="emailUser" placeholder="Email"> </div>
+				<div class="input-container-icon">
+					<svg class="input-container-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="512px" height="512px">
 						<g>
 							<g>
 								<path d="M508.305,245.892l-32.425-38.425c-2.979-3.529-7.361-5.565-11.979-5.565H219.74c-19.927-38.63-59.4-63.049-103.304-63.049    C52.232,138.852,0,191.404,0,256s52.232,117.148,116.436,117.148c43.904,0,83.377-24.419,103.304-63.049h29.307l17.245,30.079    c6.006,10.478,21.176,10.498,27.195-0.001l15.47-26.984l15.472,26.985c6.006,10.478,21.176,10.498,27.195-0.001l15.47-26.984    l15.472,26.986c6.006,10.478,21.176,10.498,27.195-0.001l17.243-30.078H463.9c4.617,0,9-2.036,11.979-5.565l32.425-38.425    C513.232,260.27,513.232,251.731,508.305,245.892z M116.436,296.961c-22.488,0-40.784-18.376-40.784-40.961    c0-22.585,18.296-40.961,40.784-40.961S157.22,233.415,157.22,256C157.22,278.585,138.924,296.961,116.436,296.961z" fill="#95989a" /> </g>
 						</g>
 					</svg>
+					<input type="password" name="passwordUser" placeholder="Mot de passe"> </div>
+			</div>
+			<div class="button-style-submit" id="button-style-submit-index">
+				<input id="addUser-button-submit" type="submit" value="CONNEXION" name="connexion">
+				<div class="button-style-submit-svg-block">
+					<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+						<path d="M20 12l-2.83 2.83 9.17 9.17-9.17 9.17 2.83 2.83 12-12z" />
+						<path d="M0 0h48v48h-48z" fill="none" /> </svg>
 				</div>
-				<input type="submit" value="Connexion" name="connexion"> </form>
-		</section>
+			</div>
+		</form>
 	</div>
 	<?php 
 	include "footer.php";

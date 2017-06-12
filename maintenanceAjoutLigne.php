@@ -1,6 +1,6 @@
 <?php
 
-//include 'connexionBdd.php';
+include 'connexionBdd.php';
 
 //include 'header.php';
 
