@@ -97,6 +97,7 @@ a:active {
 }
 
 .button-style-submit {
+	width: 240px;
 	margin: 2vw auto;
 }
 
@@ -104,6 +105,7 @@ a:active {
     width: 40%;
 }
 
+>>>>>>> origin/petiteBranche
 .button-style-submit svg {
 	width: 40px;
 	height: 40px;
@@ -179,7 +181,157 @@ div.input-container-icon-index {
 	font-weight: 700;
 }
 
-/* FIN MODIFICATION DE MOT DE PASSE */
+/* PAGE PAS DE SUIVI DE MAINTENANCE */
+
+#suiviDeMaintenanceContainer {
+	display: flex;
+	flex-direction: column;
+	width: 60%;
+	margin: 12% auto 0 auto;
+	align-items: center;
+}
+
+#suiviDeMaintenanceContainer svg {
+	width: 200px;
+	height: 165px;
+}
+
+#suiviDeMaintenanceContainer p {
+	font-size: 28px;
+	font-weight: 700;
+	text-align: center;
+	margin-top: 5%;
+}
+
+/* FIN PAGE PAS DE SUIVI DE MAINTENANCE */
+
+/* HUB EXTRANET */
+
+/* Partie titre */
+
+#title-page-container-hub {
+    padding-top: 2vh;
+}
+
+.hubExtranetTitle {
+    padding-bottom: 0;
+}
+
+.hubExtranetTitle svg{
+	width: 120px;
+}
+
+.hubExtranetTitle h1 {
+	font-weight: 300;
+	font-size: 48px;
+}
+
+/* Les actus d'Aro */
+
+#actusAro {
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 9vh;
+    background-color: #efefef;
+}
+
+#actusAro > p {
+	font-size: 18px;
+	color: #95989A;
+	font-style: italic;
+}
+
+#actusAro svg {
+	margin: 1% 1% 1% 10%;
+	fill: #95989A;
+}
+
+/* Les menus vers les différentes parties de l'extranet */
+
+#menusHubExtranet {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 50%;
+	margin: 2% 0 0 5%;
+}
+
+#menusHubExtranet p {
+	font-size: 18px;
+	font-weight: 300;
+	color: #95989A;
+	text-align: center;
+    width: 12vh;
+    text-align: center;
+}
+
+#menusHubExtranet #top, #menusHubExtranet #bot {
+	display: flex;
+	flex-direction: row;
+	width: 90%;
+	justify-content: space-between;
+    margin-top: 4vh;
+}
+
+#menusHubExtranet #top a, #menusHubExtranet #bot a {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 45%;
+}
+
+
+#menusHubExtranet svg {
+	fill: #95989A;
+	width: 150px;
+}
+
+
+
+/* Attribus généraux et le svg du monde sur le coté */
+
+#hubExtranetBody {
+	padding: 0vh 12vh 3vh 12vh; 
+}
+
+#hubExtranetBody #svgMonde svg {
+    fill: #efefef;
+    width: 600px;
+    position: absolute;
+    overflow: hidden;
+    bottom: 0;
+    right: -300px;
+}
+#Page-Hub-Extranet {
+    overflow: hidden;
+    position: relative;
+}
+
+
+
+
+#contrats p, #factures p, #maintenance p, #emailing p {
+    transition-duration: 0.7s;
+}
+
+#contrats svg, #factures svg, #maintenance svg, #emailing svg {
+    transition-duration: 0.7s;
+}
+
+#contrats:hover svg, #factures:hover svg, #maintenance:hover svg, #emailing:hover svg {
+    fill: black;
+    transform: scale(0.9);
+}
+
+#contrats:hover p, #factures:hover p, #maintenance:hover p, #emailing:hover p {
+    color: black;
+    transform: translateY(-10px);
+}
+
+/* FIN HUB EXTRANET */
 
 /* FIN ALEXIS */
 

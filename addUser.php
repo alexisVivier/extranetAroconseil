@@ -97,7 +97,7 @@ if(isset($_POST['addUserButton'])){
     <div class="title-page-block-line"></div>
 </div>
 <div id="modifsUser">
-	<form action="formAddUser.php" method="post" id="addUserForm">
+	<form action="addUser.php" method="post" id="addUserForm">
             <div id="addUser-input-row">
                 <input type="text" name="lastname" placeholder="Nom"/>
                 <input type="text" name="firstname" placeholder="Prénom"/>

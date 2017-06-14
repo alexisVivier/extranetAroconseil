@@ -50,11 +50,21 @@ header svg {
     width: 45vh;
 }
 
+#sidebar-container-logo-svg {
+    display: flex;
+    flex-direction: column;
+}
+    
+#sidebar-container-logo-svg:hover svg{
+    fill: #999999;
+}
+
 #sidebar-logo {
     fill: white;
-    height: 4.5%;
+    height: 50px;
     width: auto;
     margin-top: 18%;
+    transition-duration: 0.7s;
 }
 
 .sidebar-menu {
@@ -199,6 +209,8 @@ section {
     display: flex;
     flex-direction: column;
     width: 100%;
+    position: relative;
+    overflow: hidden;
 }
 
 
@@ -522,9 +534,9 @@ input#addUser-button-submit:hover {
     content: ' ';
     background-image: url(../icon/cross-delete-line.svg);
     background-repeat: no-repeat;
-    background-size: 20px 20px;
-    height: 20px;
-    width: 20px;
+    background-size: 18px 18px;
+    height: 18px;
+    width: 18px;
 }
 
 .hide {
@@ -584,4 +596,291 @@ table.table tbody tr {
 }
 
 
+/* ======================== POP-UP AJOUTER UNE LIGNE ========================*/
+
+
+
+
+.blur-in {
+    -webkit-animation: blur 2s forwards;
+    -moz-animation: blur 2s forwards;
+    -o-animation: blur 2s forwards;
+    animation: blur 2s forwards;
+}
+
+.blur-out {
+    -webkit-animation: blur-out 2s forwards;
+    -moz-animation: blur-out 2s forwards;
+    -o-animation: blur-out 2s forwards;
+    animation: blur-out 2s forwards;
+}
+
+@-webkit-keyframes blur {
+    0% {
+        -webkit-filter: blur(0px);
+        -moz-filter: blur(0px);
+        -o-filter: blur(0px);
+        -ms-filter: blur(0px);
+        filter: blur(0px);
+    }
+
+    100% {
+        -webkit-filter: blur(35px);
+        -moz-filter: blur(35px);
+        -o-filter: blur(35px);
+        -ms-filter: blur(35px);
+        filter: blur(35px);
+    }
+}
+
+@-moz-keyframes blur {
+    0% {
+        -webkit-filter: blur(0px);
+        -moz-filter: blur(0px);
+        -o-filter: blur(0px);
+        -ms-filter: blur(0px);
+        filter: blur(0px);
+    }
+
+    100% {
+        -webkit-filter: blur(35px);
+        -moz-filter: blur(35px);
+        -o-filter: blur(35px);
+        -ms-filter: blur(35px);
+        filter: blur(35px);
+    }
+}
+
+@-o-keyframes blur {
+    0% {
+        -webkit-filter: blur(0px);
+        -moz-filter: blur(0px);
+        -o-filter: blur(0px);
+        -ms-filter: blur(0px);
+        filter: blur(0px);
+    }
+
+    100% {
+        -webkit-filter: blur(35px);
+        -moz-filter: blur(35px);
+        -o-filter: blur(35px);
+        -ms-filter: blur(35px);
+        filter: blur(35px);
+    }
+}
+
+@keyframes blur {
+    0% {
+        -webkit-filter: blur(0px);
+        -moz-filter: blur(0px);
+        -o-filter: blur(0px);
+        -ms-filter: blur(0px);
+        filter: blur(0px);
+    }
+
+    100% {
+        -webkit-filter: blur(35px);
+        -moz-filter: blur(35px);
+        -o-filter: blur(35px);
+        -ms-filter: blur(35px);
+        filter: blur(35px);
+    }
+}
+
+@-webkit-keyframes blur-out {
+    0% {
+        -webkit-filter: blur(35px);
+        -moz-filter: blur(35px);
+        -o-filter: blur(35px);
+        -ms-filter: blur(35px);
+        filter: blur(35px);
+    }
+
+    100% {
+        -webkit-filter: blur(0px);
+        -moz-filter: blur(0px);
+        -o-filter: blur(0px);
+        -ms-filter: blur(0px);
+        filter: blur(0px);
+    }
+}
+
+@-moz-keyframes blur-out {
+    0% {
+        -webkit-filter: blur(35px);
+        -moz-filter: blur(35px);
+        -o-filter: blur(35px);
+        -ms-filter: blur(35px);
+        filter: blur(35px);
+    }
+
+    100% {
+        -webkit-filter: blur(0px);
+        -moz-filter: blur(0px);
+        -o-filter: blur(0px);
+        -ms-filter: blur(0px);
+        filter: blur(0px);
+    }
+}
+
+@-o-keyframes blur-out {
+    0% {
+        -webkit-filter: blur(35px);
+        -moz-filter: blur(35px);
+        -o-filter: blur(35px);
+        -ms-filter: blur(35px);
+        filter: blur(35px);
+    }
+
+    100% {
+        -webkit-filter: blur(0px);
+        -moz-filter: blur(0px);
+        -o-filter: blur(0px);
+        -ms-filter: blur(0px);
+        filter: blur(0px);
+    }
+}
+
+@keyframes blur-out {
+    0% {
+        -webkit-filter: blur(35px);
+        -moz-filter: blur(35px);
+        -o-filter: blur(35px);
+        -ms-filter: blur(35px);
+        filter: blur(35px);
+    }
+
+    100% {
+        -webkit-filter: blur(0px);
+        -moz-filter: blur(0px);
+        -o-filter: blur(0px);
+        -ms-filter: blur(0px);
+        filter: blur(0px);
+    }
+}
+
+
+#overlay {
+    position: relative;
+    z-index: 1;
+}
+
+.pop-up {
+    display: none;
+    position: fixed;
+    margin: 12% 28% 6% 28%;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    width: 85vh;
+    -webkit-box-shadow: 10px 10px 70px -8px rgba(77,77,77,1);
+    -moz-box-shadow: 10px 10px 70px -8px rgba(77,77,77,1);
+    box-shadow: 10px 10px 70px -8px rgba(77,77,77,1);
+}
+
+.popUp-head-container {
+    width: 85vh;
+    height: 6.5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+}
+
+.popUp-head-txt-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.popUp-head-txt-container svg {
+    fill: white;
+    width: 36px;
+    height: 36px;
+    margin-left: 3vh;
+}
+
+.popUp-head-txt-container h1 {
+    color: white;
+    font-weight: 300;
+    font-size: 18px;
+    margin-left: 2vh;
+}
+
+.close-button svg {
+    fill: #95989A;
+    width: 20px;
+    height: 20px;
+    margin-right: 3vh;
+    transition-duration: 0.7s;
+    cursor: pointer;
+}
+
+.close-button:hover svg {
+    fill: white;
+}
+
+#maintenanceAjoutLigne form {
+    width: 85vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.AjoutLigneInputForm {
+    display: flex;
+    flex-direction: row;
+    margin-top: 4.5vh;
+}
+
+.AjoutLigneInputContainer {
+    display: flex;
+    flex-direction: column;
+    margin-right: 3.5vh;
+}
+
+.AjoutLigneInputContainer input {
+    border: 1px solid #95989A;
+    padding: 1vh 2vh 1vh 2vh;
+    color: black;
+    font-size: 16px;
+    font-weight: 300;
+    width: 35vh;
+    margin-bottom: 3.5vh;
+}
+
+.AjoutLigneInputForm textarea {
+    border: 1px solid #95989A;
+    padding: 1vh 2vh 1vh 2vh;
+    color: black;
+    font-size: 16px;
+    font-weight: 300;
+    width: 35vh;
+    height: 27.8vh;
+    resize: none;
+}
+
+#AjoutLigneSubmitStyle {
+    width: 200px;
+    margin-top: 1vh;
+    margin-right: 5.8vh;
+    margin-bottom: 4vh;
+}
+
+#AjoutLigneSubmit {
+    background-color: white;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    width: 160px;
+    transition-duration: 0.7s;
+    cursor: pointer;
+}
+
+#AjoutLigneSubmit:hover {
+    background-color: black;
+    color: white;
+}
 /* FIN NATHAN */

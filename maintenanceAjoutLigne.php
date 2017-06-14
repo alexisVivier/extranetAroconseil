@@ -6,7 +6,7 @@ include 'connexionBdd.php';
 
 //	On récupère tout ce qui à été entré dans le formulaire pour traiter les données par la suite
 
-if(isset($_POST['ajouter'])){
+if(isset($_POST['ajouterLigneMaintenance'])){
 	$society = htmlspecialchars($_POST['society']);
 	$annee = htmlspecialchars($_POST['annee']);
 	$date = htmlspecialchars($_POST['date']);
@@ -33,7 +33,7 @@ if(isset($_POST['ajouter'])){
 			<input type="date" name="date" placeholder="Date">
 			<textarea name="demande" placeholder="Demande"></textarea>
 			<input type="number" name="nbr_heures" placeholder="Nombre heures">
-			<input type="submit" name="ajouter" value="Ajouter la demande">
+			<input type="submit" name="ajouterLigneMaintenance" value="Ajouter la demande">
 			
 		</form>
 		
